@@ -1,0 +1,15 @@
+MANIFEST.in
+README.md
+setup.py
+osc_gateway_python_sdk/__init__.py
+osc_gateway_python_sdk/authentication.py
+osc_gateway_python_sdk/call.py
+osc_gateway_python_sdk/credentials.py
+osc_gateway_python_sdk/oapi.yaml
+osc_gateway_python_sdk/outscale_gateway.py
+osc_gateway_python_sdk/requester.py
+osc_gateway_python_sdk.egg-info/PKG-INFO
+osc_gateway_python_sdk.egg-info/SOURCES.txt
+osc_gateway_python_sdk.egg-info/dependency_links.txt
+osc_gateway_python_sdk.egg-info/requires.txt
+osc_gateway_python_sdk.egg-info/top_level.txt
