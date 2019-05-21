@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='osc_gateway_python_sdk',
-    version='0.9.3',
+    version='0.9.4',
     author="Slim Kac",
     author_email="slim.kac@gmail.com",
     description="Outscale Gateway python SDK",
