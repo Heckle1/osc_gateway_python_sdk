@@ -26,9 +26,13 @@ class ParameterHasWrongType(NotImplementedError):
 
 class OutscaleGateway:
 
-    def __init__(self, **kwargs):
+    def __init__(self, retry=True, **kwargs):
         self._load_gateway_structure()
         self.call = Call(**kwargs)
+        if retry is True:
+            self.retry = 5
+        else:
+            self.retry = 1
 
     def _convert(self, input_file):
         structure = {}
@@ -93,7 +97,10 @@ class OutscaleGateway:
 
     def _Action(self, **kwargs):
         self._check(self.action_name, **kwargs)
-        result = self.call.api(self.action_name, **kwargs)
+        for i in range(0, self.retry):
+            result = self.call.api(self.action_name, **kwargs)
+            if 'Error' not in result:
+                break
         self.action_name = None
         return result
 
