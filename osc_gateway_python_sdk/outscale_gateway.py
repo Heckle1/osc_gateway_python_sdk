@@ -1,4 +1,5 @@
 import os
+import time
 from .call import Call
 from ruamel.yaml import YAML
 
@@ -101,6 +102,7 @@ class OutscaleGateway:
             result = self.call.api(self.action_name, **kwargs)
             if 'Error' not in result:
                 break
+            time.sleep(1)
         self.action_name = None
         return result
 
