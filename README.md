@@ -6,7 +6,7 @@ Based on oapi-cli this program helps you making Outscale Gateway call.
 
 # Usage
        from osc_gateway_python_sdk import Gateway
-       gw = OutscaleGateway(**{'profile': 'my-profile'})
+       gw = Gateway(**{'profile': 'my-profile'})
        # Calls with api Action as method
        result = gw.ReadSecurityGroups(Filters={'SecurityGroupNames': ['default']})
        result = gw.CreateVms(ImageId='ami-3e158364', VmType='tinav4.c2r4')
