@@ -11,7 +11,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     include_package_data=True,
-    url="https://github.com/javatechy/dokr",
+    url="https://github.com/Heckle1/osc_gateway_python_sdk",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
