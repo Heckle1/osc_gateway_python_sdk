@@ -1,6 +1,6 @@
 ## How to submit a contribution
 
-Thank you for considering contributing to OSC-CLI.
+Thank you for considering contributing to osc_gateway_python_sdk.
 
 Potential contributions include:
 
