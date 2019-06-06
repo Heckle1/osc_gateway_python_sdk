@@ -5,7 +5,10 @@ import os
 class Credentials:
     def __init__(self, profile):
         if not self.load_credentials_from_env():
-            self.load_credentials_from_file(profile)
+            if profile.get('cockpit-profile') != None and profile.get('cockpit-profile') != "":
+                self.load_credentials_from_profile(profile)
+            else:
+                self.load_credentials_from_file(profile)
 
     def load_credentials_from_env(self):
         self.access_key = os.environ.get('OSC_ACCESS_KEY')
@@ -44,3 +47,15 @@ class Credentials:
 
     def get_url_extension(self):
         return 'hk' if 'cn' in self.region else 'com'
+
+    def load_credentials_from_profile(self, profile):
+        """
+            Set credential from cockpit
+        """
+        try:
+            self.access_key = profile.get('cockpit-profile').get('access_key')
+            self.secret_key = profile.get('cockpit-profile').get('secret_key')
+            self.region = profile.get('cockpit-profile').get('region')
+        except IOError:
+            print('Error - Profile not found')
+            raise
